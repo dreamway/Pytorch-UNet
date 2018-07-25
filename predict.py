@@ -1,5 +1,6 @@
 import argparse
 import os
+import time
 
 import numpy as np
 import torch
@@ -142,6 +143,7 @@ if __name__ == "__main__":
     for i, fn in enumerate(in_files):
         print("\nPredicting image {} ...".format(fn))
 
+        start_time = time.time()
         img = Image.open(fn)
         if img.size[0] < img.size[1]:
             print("Error: image height larger than the width")
@@ -152,6 +154,9 @@ if __name__ == "__main__":
                            out_threshold=args.mask_threshold,
                            use_dense_crf= not args.no_crf,
                            use_gpu=not args.cpu)
+
+        elapsed = time.time()-start_time
+        print("predict_img elapsed: ", elapsed)
 
         if args.viz:
             print("Visualizing results for image {}, close to continue ...".format(fn))

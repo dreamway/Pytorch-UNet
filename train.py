@@ -120,6 +120,7 @@ def get_args():
 
 if __name__ == '__main__':
     args = get_args()
+    print("Options:", args)
 
     net = UNet(n_channels=3, n_classes=1)
 

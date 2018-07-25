@@ -1,6 +1,8 @@
 import torch
 from torch.autograd import Function, Variable
 
+#JW: how this class & function is write?
+
 class DiceCoeff(Function):
     """Dice coeff for individual examples"""
 
