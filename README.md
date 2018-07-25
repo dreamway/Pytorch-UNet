@@ -44,3 +44,6 @@ The model has be trained from scratch on a GTX970M 3GB.
 Predicting images of 1918*1280 takes 1.5GB of memory.
 Training takes approximately 3GB, so if you are a few MB shy of memory, consider turning off all graphical displays.
 This assumes you use bilinear up-sampling, and not transposed convolution in the model.
+
+## JW
+have been tested on Carvana dataset
